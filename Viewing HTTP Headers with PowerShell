@@ -1,0 +1,11 @@
+Invoke-WebRequest -Uri "https://www.ihlas.com.tr" -Method Head | Select-Object -Expand Headers
+
+This command sends a HEAD request to the specified URL (https://example.com) using PowerShell and retrieves only the HTTP response headers without downloading the entire page content.
+Invoke-WebRequest -Uri "https://example.com" -Method Head → Sends a HEAD request to the given URL.
+| Select-Object -Expand Headers → Extracts and displays only the response headers (e.g., Content-Type, Server, Strict-Transport-Security, X-Frame-Options, etc.).
+
+🔎 Use cases:
+Checking which HTTP headers a server sends.
+Verifying security headers (CSP, HSTS, X-Frame-Options, etc.).
+Validating web server configuration.
+Detecting unnecessary information disclosure headers (e.g., X-Powered-By, Server).
